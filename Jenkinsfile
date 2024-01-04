@@ -11,6 +11,9 @@ pipeline
       stage('Test') {
         steps {
              snykSecurity( snykInstallation: 'snyk', snykTokenId: 'snykid' )
+            {
+                sh "snyk iac test"
+            }
            }  
       }
        }
